@@ -1,2 +1,3 @@
 # Articles-Web-App
-[Imgur](https://i.imgur.com/TFJbJbD.png)
+
+<a href="https://imgur.com/TFJbJbD"><img src="https://i.imgur.com/TFJbJbD.png" title="source: imgur.com" /></a>
