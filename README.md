@@ -1,2 +1,2 @@
 # Articles-Web-App
-<img src="https://imgur.com/TFJbJbD" alt="home_page_pic" width='600' height='600'>
+<img src="https://i.imgur.com/TFJbJbD.png" alt="home_page_pic" width='600' height='600'>
