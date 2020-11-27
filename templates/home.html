@@ -1,0 +1,17 @@
+<!-- Home Page will be extended from base.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }} <!-- super() is used to call everything from base.html in block content -->
+<hr>
+<h2>List of Articles</h2>
+<ul class="list_posts">
+	{% for article in articles %}
+	<li>
+		<p class="title"><a href="{{ url_for('show_article', alias=article.url) }}">{{ article.title }}</a></p>
+		<!-- in order not to visualize tags in a text provide the filter striptags-->
+		<p class="all_articles">{{ article.content[:500] | striptags }}</p>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock content %}

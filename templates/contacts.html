@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<!-- Flas messages will be depicted in front of the form. If a form has been successfully submitted, then a certain flash message is formed -->
+<!-- Provide parameter True in get_flashed_messages to return data in format category, message -->
+{% for category, message in get_flashed_messages(True) %}
+<div class="flash {{category}}">{{ message }}</div>
+{% endfor %}
+<!-- Our from -->
+<form action="{{ url_for('contacts') }}" method="post" class="form_contacts">
+	<p><label>Name: </label> <input type="text" name="username" value="" required></p>
+	<p><label>Email: </label> <input type="text" name="email" value="" required></p>
+	<p><label>Message:</label>
+		<p><textarea name="message" rows=7 cols=40></textarea></p>
+		<p><input type="submit" value="Send"></p>
+</form>
+{% endblock content %}

@@ -1,0 +1,11 @@
+
+Flask==1.1.2
+Werkzeug==1.0.1
+Flask-Login==0.5.0
+Flask-WTF==0.14.3
+WTForms==2.3.3
+email-validator==1.1.2
+
+# To install all requirements use: pip install -r <reqirements> (e.g. pip install -r requirements.txt)
+# For Dockerfile use: RUN pip install --no-cache-dir -r requirements.txt to install required libraries into a container.
+# ! There is no need to install sqlite because it's built in in Python.

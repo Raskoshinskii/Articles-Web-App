@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link> connects our stylessheet-->
+<link type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+
+{% block title -%}
+{% if title %}
+	<title>Travelling Articles - {{ title }}</title>
+{% else %}
+	<title>Travelling Articles</title>
+{% endif %}
+{% endblock title %}
+</head>
+
+<body>
+{% block content -%}
+<!-- Menu-->
+	{%- block site_menu -%}
+	<ul class='site_menu'>
+		{% for menu_element in site_menu  %}
+			<li><a href="{{ menu_element.url }}">{{ menu_element.title }}</a></li>
+		{% endfor %}
+	</ul>
+	{% endblock site_menu -%}
+<div class="clear"></div>
+<div class="content">
+{% if title -%}
+	<h1>{{ title }}</h1>
+{% else -%}
+	<h1>Travelling Articles</h1>
+{% endif -%}
+{% endblock content -%}
+</div>
+</body>
+</html>

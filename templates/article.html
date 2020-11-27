@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<!-- provide filter safe. It indicates that the data in content is safe and can be depicted on the page-->
+{{ content | safe}}
+{% endblock content %}

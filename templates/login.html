@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+{% for category, message in get_flashed_messages(True) %}
+<div class="flash {{category}}">{{ message }}</div>
+{% endfor %}
+<!-- Parameter action on the form is empty because an url from browser will be taken -->
+<form action="" method="post" class="form_contacts">
+<!-- Method hidden_tag() is used to create a protection from CSRF attacks -->
+{{ form.hidden_tag() }}
+<!-- form_name.field_name.tag_name() creates a tag for a certain field on a form -->
+<!-- To keep track of errors use: form.field_name.errors -->
+{% for field in form if field.name not in ['csrf_token', 'remember_me_button', 'submit_button'] -%}
+	<p>{{ field.label() }} 
+		{% if field.errors %}
+			{{ field(class='invalid') }}
+			<span class="invalid-feedback">
+				{% for error in field.errors %}
+				{{ error }}
+				{% endfor %}
+			</span>
+		{% else %}
+			{{ field() }}
+		{% endif %}
+	</p>
+{% endfor %}
+<p>{{ form.remember_me_button.label() }}  {{ form.remember_me_button() }}</p>
+<p>{{ form.submit_button() }}</p>
+<hr align="left" width="300px">
+<p><a href="{{ url_for('register') }}">Sign Up</a></p>
+</form>
+{% endblock content %}
