@@ -1,10 +1,10 @@
 # Articles-Web-App
 This web application was developed as an article website. It includes the following functionality:
-- new users registration
-- new articles creation
-- view user profile (email, username and useravatar)
-- users can download a new profile photo
-- ability to login with admin rights
+- New users registration
+- New articles creation
+- View user profile (email, username and user avatar);
+- Users can download a new profile photo;
+- Ability to login with admin rights;
 
 The application includes the following tools:
 - Flask
